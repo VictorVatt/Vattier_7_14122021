@@ -4,15 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./public/css/style.css" media="all"/>
-        <title>FishEye</title>
-        <link rel="shortcut icon" type="image/png" href="/img/favicon.ico"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://kit.fontawesome.com/d3b2bb5d9a.js" crossorigin="anonymous"></script>
+
+        <title>Les petits plats</title>
+        <link rel="shortcut icon" type="image/png" href="/img/Vector.ico"/>
     </head>
     <body>
-        <header>
-
+        <header id="header">
+            <div id="logo-wrapper">
+                <img id="logo-icon" src="/img/Vector.svg" alt="icone du logo de les petits plats">
+                <p id="logo-name">Les petits plats</p>
+            </div>
+            <form id="research-bar">
+                <label for="research-input"></label>
+                <input type="search" id="research-input" placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette">
+                <i class="fas fa-search"></i>
+            </form>
         </header>
         <main>
-
+            <section id="filters">
+                <div id="ingredients" class="filter-container blue"><p>Ingredients</p><i class="fas fa-chevron-down"></i></div>
+                <div id="appareil" class="filter-container green "><p>Appareil</p><i class="fas fa-chevron-down"></i></div>
+                <div id="ustensiles" class="filter-container red"><p>Utensiles</p><i class="fas fa-chevron-down"></i></div>
+            </section>
+            <script src="/script/filtersdeployed.js"></script>
         </main>
     </body>
 

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* font-family: 'DM Sans', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif; */
+$title-color: #D04F4F;
+html {
+    box-sizing: border-box;
+}
+body {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#header {
+    font-family: 'DM Sans', sans-serif;
+    padding-top: 42px;
+    text-align: center;
+    #logo-wrapper {
+        #logo-name {
+            color: $title-color;
+            font-family: DM Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 47px;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        #logo-icon {
+            width: 50px;
+            height: 46px;
+        }
+    }
+
+    #research-bar {
+        position: relative;
+        width: 100%;
+        #research-input {
+            margin: 1rem 0;
+            background-color: #E7E7E7;
+            border: #FFF solid 1px;
+            border-radius: .3125rem;
+            font-size: 1rem;
+            height: 69px;
+            outline: none;
+            padding: 23px;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+        .fas {
+            position: absolute;
+            top: 34px;
+            right: 15px;
+            font-size: 32px;
+            background-color: #E7E7E7;
+        }
+        #research-input:focus {
+            outline: solid 1px rgb(133, 133, 133);
+        }
+
+    }
+}
+
+#filters {
+    font-family: 'Lato', sans-serif;
+    color: white;
+    display: flex;
+        .filter-container {
+            position: relative;
+            margin-right: 20px;
+            font-weight: 700;
+            font-size: 18px;
+            font-style: normal;
+            width: 155px;
+            height: 69px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 15px;
+            transition: ease-in-out 1s;
+            .fas {
+                position: absolute;
+                top: 22px;
+                right: 20px;
+                cursor: pointer;
+                transition-duration: 1s;
+            }
+            p {
+                margin-top: 21px;
+            }
+            .filter-input {
+                height: 30px;
+                width: 70%;
+                margin-top: 12px;
+                color: white;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+        .blue.deployed {
+            width: 400px;
+            height: 300px;
+        }
+        .blue {
+            background-color: #3282F7;
+        }
+        .green {
+            background-color: #68D9A4;
+        }
+        .red {
+            background-color: #ED6454;
+        }
+
+    }
+
