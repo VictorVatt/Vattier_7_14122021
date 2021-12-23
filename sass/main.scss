@@ -12,7 +12,7 @@ body {
     margin: 0 auto;
     padding: 0;
 }
-
+/** -----------------------------------------------------------(CSS POUR LE HEADER )----------------------------------------------------------------*/
 #header {
     font-family: 'DM Sans', sans-serif;
     padding-top: 42px;
@@ -20,7 +20,7 @@ body {
     #logo-wrapper {
         #logo-name {
             color: $title-color;
-            font-family: DM Sans;
+            font-family: 'DM Sans', sans-serif;
             font-style: normal;
             font-weight: bold;
             font-size: 36px;
@@ -62,7 +62,7 @@ body {
 
     }
 }
-
+/**--------------------------------------------------------(CSS POUR LES FILTRES PAR TAG)------------------------------------------------------*/
 #filters {
     font-family: 'Lato', sans-serif;
     color: white;
@@ -80,6 +80,7 @@ body {
             justify-content: space-between;
             padding-left: 15px;
             transition: ease-in-out 1s;
+            cursor: pointer;
             .fas {
                 position: absolute;
                 top: 22px;
@@ -101,8 +102,25 @@ body {
             }
         }
         .blue.deployed {
-            width: 400px;
-            height: 300px;
+            width: 200px;
+            height: 100px;
+            .fas.fa-chevron-down {
+                transform: rotate(180deg);
+            }
+        }
+        .green.deployed {
+            width: 200px;
+            height: 100px;
+            .fas.fa-chevron-down {
+                transform: rotate(180deg);
+            }
+        }
+        .red.deployed {
+            width: 200px;
+            height: 100px;
+            .fas.fa-chevron-down {
+                transform: rotate(180deg);
+            }
         }
         .blue {
             background-color: #3282F7;
