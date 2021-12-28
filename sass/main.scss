@@ -80,7 +80,6 @@ body {
             justify-content: space-between;
             padding-left: 15px;
             transition: ease-in-out 1s;
-            cursor: pointer;
             .fas {
                 position: absolute;
                 top: 22px;
@@ -88,13 +87,14 @@ body {
                 cursor: pointer;
                 transition-duration: 1s;
             }
-            p {
-                margin-top: 21px;
+            .container-title {
+                margin-top: 20px;
+                transition-duration: 0.2s;
             }
-            .filter-input {
+            .input-field{
                 height: 30px;
-                width: 70%;
-                margin-top: 12px;
+                width: 85%;
+                margin-top: 15px;
                 color: white;
                 background-color: transparent;
                 border: none;
