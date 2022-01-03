@@ -20,15 +20,15 @@ arrowDown.forEach((arrow) => arrow.addEventListener("click", () => {
         arrow.classList.remove("deployed")
         arrow.parentNode.classList.remove("deployed")
     }
-    replaceTitleBySearchField(ingredientFilter, 0, "Ingredients")
-    replaceTitleBySearchField(appareilFilter, 1, "Appareil")
-    replaceTitleBySearchField(ustensileFilter, 2, "Ustensiles")
+    replaceTitleBySearchField(ingredientFilter, 0, "Ingredients", "Rechercher un ingrédient" )
+    replaceTitleBySearchField(appareilFilter, 1, "Appareil", "Rechercher un appareil")
+    replaceTitleBySearchField(ustensileFilter, 2, "Ustensiles", "Rechercher un ustensile")
 }))
 
 
-function replaceTitleBySearchField(element, index, word) {
+function replaceTitleBySearchField(element, index, word, placeholder) {
     if (element.classList.contains("deployed")) {
-        inputContainer[index].innerHTML = tagSearchField;
+        inputContainer[index].innerHTML = `<input class="input-field" type="search" placeholder="${placeholder}">`;
     } else {
         inputContainer[index].innerHTML = `<p class="container-title">${word}</p>`;
     }
