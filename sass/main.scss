@@ -64,9 +64,12 @@ body {
 }
 /**--------------------------------------------------------(CSS POUR LES FILTRES PAR TAG)------------------------------------------------------*/
 #filters {
+    position: absolute;
+    top: 250px;
     font-family: 'Lato', sans-serif;
     color: white;
     display: flex;
+    z-index: 10;
         .filter-container {
             position: relative;
             margin-right: 20px;
@@ -78,8 +81,10 @@ body {
             border-radius: 5px;
             display: flex;
             justify-content: space-between;
-            padding-left: 15px;
             transition: ease-in-out 1s;
+            flex-direction: column;
+            overflow: scroll;
+            
             .fas {
                 position: absolute;
                 top: 22px;
@@ -89,10 +94,12 @@ body {
             }
             .container-title {
                 margin-top: 20px;
+                padding-left: 15px;
                 transition-duration: 0.2s;
             }
             .input-container {
                 width: 80%;
+                height: 40px;
                 .input-field{
                     height: 30px;
                     width: 100%;
@@ -101,6 +108,7 @@ body {
                     background-color: transparent;
                     border: none;
                     outline: none;
+                    margin-left: 15px;
                 }
                 .input-field::placeholder {
                     color: white;
@@ -110,24 +118,111 @@ body {
                     display: none;
                 }
             }
+            .tags-wrapper {
+                width: 100%;
+                #ingredient-taglist-container {
+                    .taglist-ingredients {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    padding-left: 0;
+                    height: fit-content;
+                    margin: 1.5rem 1rem 1rem 1rem;
+                        li {
+                        font-size: 18px;
+                        overflow: hidden;
+                        padding: 0.5rem 1rem;
+                        text-align: start;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        width: 9rem;
+                        cursor: pointer;
+                        transition-duration: 0.2s;
+                        border-radius: 5px;
+                        }
+                        li:hover {
+                            background-color: white;
+                            color: #3282F7;
+                        }
+                    }
+                }
+                #devices-taglist-container {
+                    .taglist-devices {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    padding-left: 0;
+                    height: fit-content;
+                    margin: 1.5rem 1rem 1rem 1rem;
+                        li {
+                        font-size: 18px;
+                        overflow: hidden;
+                        padding: 0.5rem 1rem;
+                        text-align: start;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        width: 9rem;
+                        cursor: pointer;
+                        transition-duration: 0.2s;
+                        border-radius: 5px;
+                        }
+                        li:hover {
+                            background-color: white;
+                            color: #3282F7;
+                        }
+                    }
+                }
+                #tools-taglist-container {
+                    .taglist-tools {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    padding-left: 0;
+                    height: fit-content;
+                    margin: 1.5rem 1rem 1rem 1rem;
+                        li {
+                        font-size: 18px;
+                        overflow: hidden;
+                        padding: 0.5rem 1rem;
+                        text-align: start;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        width: 10rem;
+                        cursor: pointer;
+                        transition-duration: 0.2s;
+                        border-radius: 5px;
+                        }
+                        li:hover {
+                            background-color: white;
+                            color: #3282F7;
+                        }
+                    }
+                }
+            }
+        }
+        .filter-container::-webkit-scrollbar {
+            display: none;
         }
         .blue.deployed {
-            width: 250px;
-            height: 100px;
+            width: 600px;
+            height: 350px;
             .fas.fa-chevron-down {
                 transform: rotate(180deg);
             }
         }
         .green.deployed {
-            width: 250px;
-            height: 100px;
+            width: 400px;
+            height: 300px;
             .fas.fa-chevron-down {
                 transform: rotate(180deg);
             }
         }
         .red.deployed {
-            width: 250px;
-            height: 100px;
+            width: 450px;
+            height: 250px;
             .fas.fa-chevron-down {
                 transform: rotate(180deg);
             }
@@ -148,6 +243,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 5.5rem;
     .recipe-card {
         margin: 1rem 0;
         width: 380px;
@@ -174,6 +270,7 @@ body {
                     margin-left: 20px;
                     padding-top: 1rem;
                     font-size: 18px;
+                    width: 250px;
                 }
                 .duration-container {
                     display: flex;

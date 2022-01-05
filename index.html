@@ -25,30 +25,45 @@
         </header>
         <main>
             <section id="filters">
+
                 <div id="ingredients" class="filter-container blue">
-                    
                     <div class = "input-container">
                         <p class="container-title">Ingredients</p>
-                
                     </div>
                     <i class="fas fa-chevron-down"></i>
+                    <div class="tags-wrapper">
+                        <div id="ingredient-taglist-container">
+                            
+                        </div>
+                    </div>
                 </div>
+
 
                 <div id="appareil" class="filter-container green ">
                     <div class = "input-container">
                         <p class="container-title">Appareil</p>
-                
                     </div>
                     <i class="fas fa-chevron-down"></i>
-                </div>
-        
+                    <div class="tags-wrapper">
+                        <div id="devices-taglist-container">
+                            
+                        </div>
+                    </div>
+                </div> 
+
+
                 <div id="ustensiles" class="filter-container red">
                     <div class = "input-container">
-                        <p class="container-title">Ustensiles</p>
-                
+                        <p class="container-title">Ustensiles</p>             
                     </div>
                     <i class="fas fa-chevron-down"></i>
+                    <div class="tags-wrapper">
+                        <div id="tools-taglist-container">
+                            
+                        </div>
+                    </div>
                 </div>
+
             </section>
 
             <section id="recipe-card-wrapper">
@@ -56,11 +71,12 @@
             </section>
 
 
-
-
             <script src="/data/recipes.js"></script>
-            <script src="/script/recipeCard.js"></script>
-            <script src="/script/filtersdeployed.js"></script>
+            <script src="/script/Utils/getAllData.js"></script>
+            <script src="/script/pageBuilder/displayTagsLists.js"></script>
+            <script src="/script/pageBuilder/filtersDeployed.js"></script>
+            <script src="/script/pageBuilder/displayRecipe.js"></script>
+            <script src="/script/Research/mainResearch.js"></script>
             <script src="/script/App.js"></script>
         </main>
     </body>
