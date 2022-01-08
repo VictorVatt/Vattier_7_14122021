@@ -7,6 +7,7 @@ class DisplayTagsList {
     displayIngredientTagList(ingredients) {
         let list = document.createElement("ul")
         list.classList.add("taglist-ingredients")
+        this.IngredientTaglistContainer.innerHTML = ""
         this.IngredientTaglistContainer.appendChild(list)
 
         ingredients.forEach((ingredient) => {
@@ -21,6 +22,7 @@ class DisplayTagsList {
     displayDevicesTagList(devices) {
         let list = document.createElement("ul")
         list.classList.add("taglist-devices")
+        this.DevicesTaglistContainer.innerHTML = ""
         this.DevicesTaglistContainer.appendChild(list)
 
         devices.forEach((device) => {
@@ -34,17 +36,16 @@ class DisplayTagsList {
     displayToolsTagList(tools) {
         let list = document.createElement("ul")
         list.classList.add("taglist-tools")
+        this.CookingToolsTaglistContainer.innerHTML = ""
         this.CookingToolsTaglistContainer.appendChild(list)
 
         tools.forEach((tool) => {
             let toolLiTag = document.createElement("li")
 
-            list.appendChild(toolLiTag)
             toolLiTag.innerHTML = `${tool}`
+            list.appendChild(toolLiTag)
             toolLiTag.classList.add("tool-tag")
         })
     }
 }
-new DisplayTagsList().displayIngredientTagList(new GetData().getIngredients(allRecipesData))
-new DisplayTagsList().displayDevicesTagList(new GetData().getDevices(allRecipesData))
-new DisplayTagsList().displayToolsTagList(new GetData().getCookingTools(allRecipesData))
+

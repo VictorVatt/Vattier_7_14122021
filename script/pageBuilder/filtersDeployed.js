@@ -1,6 +1,7 @@
 const filters = document.querySelectorAll(".filter-container")
 const arrowDown = document.querySelectorAll(".fa-chevron-down")
 const inputContainer = document.querySelectorAll(".input-container")
+const tagsWrapper = document.querySelectorAll(".tags-wrapper")
 
 
 const ingredientFilter = document.querySelector("#ingredients")
@@ -16,9 +17,11 @@ arrowDown.forEach((arrow) => arrow.addEventListener("click", () => {
     if (!arrow.classList.contains("deployed")) {
         arrow.classList.add("deployed")
         arrow.parentNode.classList.add("deployed")
+        tagsWrapper.forEach(wrapper => wrapper.style.display = "block")
     } else {
         arrow.classList.remove("deployed")
         arrow.parentNode.classList.remove("deployed")
+        tagsWrapper.forEach(wrapper => wrapper.style.display = "none")
     }
     replaceTitleBySearchField(ingredientFilter, 0, "Ingredients", "Rechercher un ingrédient" )
     replaceTitleBySearchField(appareilFilter, 1, "Appareil", "Rechercher un appareil")

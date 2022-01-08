@@ -80,11 +80,9 @@ body {
             height: 69px;
             border-radius: 5px;
             display: flex;
-            justify-content: space-between;
+
             transition: ease-in-out 1s;
-            flex-direction: column;
-            overflow: scroll;
-            
+            flex-direction: column;  
             .fas {
                 position: absolute;
                 top: 22px;
@@ -120,6 +118,7 @@ body {
             }
             .tags-wrapper {
                 width: 100%;
+                overflow: scroll;
                 #ingredient-taglist-container {
                     .taglist-ingredients {
                     display: flex;
@@ -203,7 +202,7 @@ body {
                 }
             }
         }
-        .filter-container::-webkit-scrollbar {
+        .tags-wrapper::-webkit-scrollbar {
             display: none;
         }
         .blue.deployed {
