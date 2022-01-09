@@ -14,6 +14,7 @@ searchInput.addEventListener("input", (search) => {
             return console.log("recette inconnue")
         }
             document.querySelector("#recipe-card-wrapper").innerHTML = ""
+
             new DisplayTagsList().displayToolsTagList(searchResult.toolsTags)
             new DisplayTagsList().displayIngredientTagList(searchResult.ingredientsTags)
             new DisplayTagsList().displayDevicesTagList(searchResult.devicesTags)
