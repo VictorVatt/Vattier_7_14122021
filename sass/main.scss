@@ -62,6 +62,7 @@ body {
 
     }
 }
+/** -------------------------------------------------------- Section ou les tags sélectionnés apparaissent -------------------------------------*/
 /**--------------------------------------------------------(CSS POUR LES FILTRES PAR TAG)------------------------------------------------------*/
 #filters {
     position: absolute;
@@ -261,6 +262,7 @@ body {
             background-color: #E7E7E7;
             margin: 0;
             border-radius:  0 0 5px 5px;
+            overflow: scroll;
             .title-duration {
                 display: flex;
                 justify-content: space-between;
@@ -284,6 +286,25 @@ body {
                     }
                 }
             }
+            .recipe-information {
+                display: flex;
+                justify-content: space-between;
+                .recipe-ingredient {
+                    p {
+                        margin: 0 0 0 10px;
+                        font-size: 13px;
+                    }
+                }
+                .recipe-instruction {
+                    font-size: 10px;
+                    width: 250px;
+                    margin-left: 10px;
+                    
+                }
+            }
+        }
+        .information-container::-webkit-scrollbar {
+            display: none;
         }
     }
 }
