@@ -94,6 +94,34 @@ body {
             color: rgb(202, 202, 202);
         }
     }
+    .green-selected-tag {
+        display: flex;
+        align-items: center;
+        height: 37px;
+        background-color:#68D9A4;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+        padding: 0 10px;
+        border-radius: 5px;
+        p {
+            margin: 0;
+            font-weight: 700;
+            font-size: 14px;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            align-items: center;
+        }
+        .far {
+            margin-left: 20px;
+            font-size: 18px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+        }
+        .far:hover{
+            color: rgb(202, 202, 202);
+        }
+    }
 }
 /**--------------------------------------------------------(CSS POUR LES FILTRES PAR TAG)------------------------------------------------------*/
 #filters {

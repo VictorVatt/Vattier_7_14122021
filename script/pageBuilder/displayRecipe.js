@@ -5,6 +5,9 @@ class DisplayRecipe {
         searchResult.forEach(recipe => {
             const template = document.createElement("article")
             template.className = "recipe-card"
+            template.setAttribute("data-ingredients", recipe.ingredients.map(element => element.ingredient).join(" "))
+            template.setAttribute("data-devices", recipe.appliance)
+            template.setAttribute("data-tools", recipe.ustensils.map(element => element).join(" "))
 
             const recipeCard = `<div class="grey-part"></div>
                                 <div class="information-container">
