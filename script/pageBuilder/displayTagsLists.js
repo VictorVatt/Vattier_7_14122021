@@ -4,6 +4,11 @@ class DisplayTagsList {
         this.DevicesTaglistContainer = document.querySelector("#devices-taglist-container")
         this.CookingToolsTaglistContainer = document.querySelector("#tools-taglist-container")
     }
+    displayAllTagList(array) {
+        new DisplayTagsList().displayIngredientTagList(new GetData().getIngredients(array))
+        new DisplayTagsList().displayDevicesTagList(new GetData().getDevices(array))
+        new DisplayTagsList().displayToolsTagList(new GetData().getCookingTools(array))
+    }
     displayIngredientTagList(ingredients) {
         let list = document.createElement("ul")
         list.classList.add("taglist-ingredients")

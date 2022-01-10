@@ -63,14 +63,46 @@ body {
     }
 }
 /** -------------------------------------------------------- Section ou les tags sélectionnés apparaissent -------------------------------------*/
+#tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    .blue-selected-tag {
+        display: flex;
+        align-items: center;
+        height: 37px;
+        background-color:#3282F7;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+        padding: 0 10px;
+        border-radius: 5px;
+        p {
+            margin: 0;
+            font-weight: 700;
+            font-size: 14px;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            align-items: center;
+        }
+        .far {
+            margin-left: 20px;
+            font-size: 18px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+        }
+        .far:hover{
+            color: rgb(202, 202, 202);
+        }
+    }
+}
 /**--------------------------------------------------------(CSS POUR LES FILTRES PAR TAG)------------------------------------------------------*/
 #filters {
     position: absolute;
-    top: 250px;
     font-family: 'Lato', sans-serif;
     color: white;
     display: flex;
     z-index: 10;
+    margin-top: 1rem;
         .filter-container {
             position: relative;
             margin-right: 20px;
@@ -81,7 +113,6 @@ body {
             height: 69px;
             border-radius: 5px;
             display: flex;
-
             transition: ease-in-out 1s;
             flex-direction: column;  
             .fas {

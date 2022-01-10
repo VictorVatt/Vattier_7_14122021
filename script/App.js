@@ -1,8 +1,6 @@
 /** Display les cartes par defaut sans aucune recherche */
 new DisplayRecipe().display(allRecipesData)
-new DisplayTagsList().displayIngredientTagList(new GetData().getIngredients(allRecipesData))
-new DisplayTagsList().displayDevicesTagList(new GetData().getDevices(allRecipesData))
-new DisplayTagsList().displayToolsTagList(new GetData().getCookingTools(allRecipesData))
+new DisplayTagsList().displayAllTagList(allRecipesData)
 
 let searchInput = document.querySelector("#research-input")
 
@@ -23,9 +21,7 @@ searchInput.addEventListener("input", (search) => {
         
     }
     document.querySelector("#recipe-card-wrapper").innerHTML = ""
-    new DisplayTagsList().displayIngredientTagList(new GetData().getIngredients(allRecipesData))
-    new DisplayTagsList().displayDevicesTagList(new GetData().getDevices(allRecipesData))
-    new DisplayTagsList().displayToolsTagList(new GetData().getCookingTools(allRecipesData))
+    new DisplayTagsList().displayAllTagList(allRecipesData)
 
     new DisplayRecipe().display(allRecipesData)
 })
