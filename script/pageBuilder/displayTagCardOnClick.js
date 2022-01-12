@@ -1,17 +1,12 @@
 class DisplayTagCard {
-    constructor() {
-        this.selectedIngredientsTags = []
-        this.selectedDevicesTags = []
-        
-    }
-    displaySelectedIngredientTag() {
+
+    async displaySelectedIngredientTag() {
+        let selectedIngredientsTags = []
         const ingredientTag = document.querySelectorAll(".ingredient-tag")
 
         ingredientTag.forEach((tag) => tag.addEventListener("click", (e) => {
             let tagContent = e.target.innerText
-            this.selectedIngredientsTags.push(e.target.innerText)
-
-            console.log(this.selectedIngredientsTags)
+            selectedIngredientsTags.push(e.target.innerText)
 
             let tagsContainer = document.querySelector("#tags-container")
 
@@ -25,26 +20,26 @@ class DisplayTagCard {
 
             let tagCross = document.querySelectorAll(".far")
             tagCross.forEach(cross => cross.addEventListener("click", (e) => {
-                let index = this.selectedIngredientsTags.indexOf(e.target.parentNode.innerText)
+                let index = selectedIngredientsTags.indexOf(e.target.parentNode.innerText)
                 if (index > -1) {
-                    this.selectedIngredientsTags.splice(index, 1)
-                    console.log(this.selectedIngredientsTags)
+                    selectedIngredientsTags.splice(index, 1)
                 }
                 cross.parentNode.parentNode.remove()
                 tag.style.display = "block"
             }))
         }))
+        return selectedIngredientsTags
     } 
-    displaySelectedDevicesTag() {
+    async displaySelectedDevicesTag() {
+        let selectedDevicesTags = []
         const deviceTag = document.querySelectorAll(".device-tag")
 
         deviceTag.forEach((tag) => tag.addEventListener("click", (e) => {
             let tagContent = e.target.innerText
-            this.selectedDevicesTags.push(e.target.innerText)
+            selectedDevicesTags.push(e.target.innerText)
 
             let tagsContainer = document.querySelector("#tags-container")
 
-            console.log(this.selectedDevicesTags)
 
             let tagCard = document.createElement("div")
             tagCard.classList.add("green-selected-tag")
@@ -56,18 +51,47 @@ class DisplayTagCard {
 
             let tagCross = document.querySelectorAll(".far")
             tagCross.forEach(cross => cross.addEventListener("click", (e) => {
-                let index = this.selectedDevicesTags.indexOf(e.target.parentNode.innerText)
+                let index = selectedDevicesTags.indexOf(e.target.parentNode.innerText)
                 if (index > -1) {
-                    this.selectedDevicesTags.splice(index, 1)
-                    console.log(this.selectedDevicesTags)
+                    selectedDevicesTags.splice(index, 1)
                 }
                 cross.parentNode.parentNode.remove()
                 tag.style.display = "block"
             }))
         }))
+        return selectedDevicesTags
+    } 
+    async displaySelectedToolsTag() {
+        let selectedToolsTags = []
+        const toolTag = document.querySelectorAll(".tool-tag")
+
+        toolTag.forEach((tag) => tag.addEventListener("click", (e) => {
+            let tagContent = e.target.innerText
+            selectedToolsTags.push(e.target.innerText)
+
+            let tagsContainer = document.querySelector("#tags-container")
+
+
+            let tagCard = document.createElement("div")
+            tagCard.classList.add("red-selected-tag")
+
+            tagCard.innerHTML = `<p>${tagContent}<i class="far fa-times-circle"></i></p>`
+            tagsContainer.appendChild(tagCard)
+
+            tag.style.display = "none"
+
+            let tagCross = document.querySelectorAll(".far")
+            tagCross.forEach(cross => cross.addEventListener("click", (e) => {
+                let index = selectedToolsTags.indexOf(e.target.parentNode.innerText)
+                if (index > -1) {
+                    selectedToolsTags.splice(index, 1)
+                }
+                cross.parentNode.parentNode.remove()
+                tag.style.display = "block"
+            }))
+        }))
+        return selectedToolsTags
     } 
 
 }
-new DisplayTagCard().displaySelectedIngredientTag()
-new DisplayTagCard().displaySelectedDevicesTag()
 

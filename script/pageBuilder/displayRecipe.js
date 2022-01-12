@@ -1,4 +1,5 @@
 class DisplayRecipe {
+
     async display(searchResult) {
         const wrapper = document.getElementById("recipe-card-wrapper")
         
