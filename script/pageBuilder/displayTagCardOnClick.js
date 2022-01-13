@@ -4,32 +4,38 @@ class DisplayTagCard {
         let selectedIngredientsTags = []
         const ingredientTag = document.querySelectorAll(".ingredient-tag")
 
-        ingredientTag.forEach((tag) => tag.addEventListener("click", (e) => {
-            let tagContent = e.target.innerText
-            selectedIngredientsTags.push(e.target.innerText)
+        for await (let tag of ingredientTag) {
+            tag.addEventListener("click", (e) => {
+                let tagContent = e.target.innerText
+                selectedIngredientsTags.push(e.target.innerText)
+    
+                let tagsContainer = document.querySelector("#tags-container")
+    
+                let tagCard = document.createElement("div")
+                tagCard.classList.add("blue-selected-tag")
+    
+                tagCard.innerHTML = `<p>${tagContent}<i class="far fa-times-circle"></i></p>`
+                tagsContainer.appendChild(tagCard)
+    
+                tag.style.display = "none"
+    
+                let tagCross = document.querySelectorAll(".far")
 
-            let tagsContainer = document.querySelector("#tags-container")
-
-            let tagCard = document.createElement("div")
-            tagCard.classList.add("blue-selected-tag")
-
-            tagCard.innerHTML = `<p>${tagContent}<i class="far fa-times-circle"></i></p>`
-            tagsContainer.appendChild(tagCard)
-
-            tag.style.display = "none"
-
-            let tagCross = document.querySelectorAll(".far")
-            tagCross.forEach(cross => cross.addEventListener("click", (e) => {
-                let index = selectedIngredientsTags.indexOf(e.target.parentNode.innerText)
-                if (index > -1) {
-                    selectedIngredientsTags.splice(index, 1)
-                }
-                cross.parentNode.parentNode.remove()
-                tag.style.display = "block"
-            }))
-        }))
+                tagCross.forEach(cross => cross.addEventListener("click", (e) => {
+                    let index = selectedIngredientsTags.indexOf(e.target.parentNode.innerText)
+                    if (index > -1) {
+                        selectedIngredientsTags.splice(index, 1)
+                    }
+                    cross.parentNode.parentNode.remove()
+                    tag.style.display = "block"
+                    })
+                )
+            })
+        }
         return selectedIngredientsTags
-    } 
+    }
+    
+    
     async displaySelectedDevicesTag() {
         let selectedDevicesTags = []
         const deviceTag = document.querySelectorAll(".device-tag")
