@@ -5,7 +5,7 @@ let searchInput = document.querySelector("#research-input")
 /** Display les cartes par defaut sans aucune recherche */
 async function researchAlgorithm() {
     new DisplayTagsList().displayAllTagList(allRecipesData)
-    new DisplayRecipe().display(await new FilterRecipes().filterRecipesByTags(allRecipesData))
+    await new DisplayRecipe().display(await new FilterRecipes().filterRecipesByTags(allRecipesData))
 
 
     searchInput.addEventListener("input", async (search) => {
@@ -23,12 +23,12 @@ async function researchAlgorithm() {
                 new DisplayTagsList().displayIngredientTagList(searchResult.ingredientsTags)
                 new DisplayTagsList().displayDevicesTagList(searchResult.devicesTags)
                 new DisplayRecipe().display(await new FilterRecipes().filterRecipesByTags(searchResult.recipesMatched))
-                new FilterRecipes().filterRecipesByTags(searchResult.recipesMatched)
+                await new DisplayRecipe().display(await new FilterRecipes().filterRecipesByTags(searchResult.recipesMatched))
                 return
             }
         }
         recipeWrapper.innerHTML = ""
-        new DisplayRecipe().display(allRecipesData)
+        await new DisplayRecipe().display(await new FilterRecipes().filterRecipesByTags(allRecipesData))
 
     })
 }
