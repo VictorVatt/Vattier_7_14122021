@@ -4,7 +4,7 @@ class Research {
         let recipesMatched = []
         
         allRecipesData.forEach(recipe => {
-            if (recipe.ingredients.some(element => element.ingredient.includes(inputValue)) || recipe.name.includes(inputValue) || recipe.description.includes(inputValue)) {
+            if (recipe.ingredients.some(element => Normalize.normalizationText(element.ingredient).includes(inputValue)) || Normalize.normalizationText(recipe.name).includes(inputValue) || Normalize.normalizationText(recipe.description).includes(inputValue)) {
                 recipesMatched.push(recipe)
             }
         })

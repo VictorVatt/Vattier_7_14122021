@@ -4,8 +4,8 @@ class GetData {
         let ingredients = []
         ing.forEach(recipe => {
             recipe.ingredients.forEach(ing => {
-                if (!ingredients.includes(ing.ingredient)) {
-                    ingredients.push(ing.ingredient)
+                if (!ingredients.includes(ing.ingredient.toLowerCase())) {
+                    ingredients.push(ing.ingredient.toLowerCase())
                 }
             })
         })
@@ -15,8 +15,8 @@ class GetData {
     getDevices(dev) {
         let devices = []
         dev.forEach(recipe => {
-                if (!devices.includes(recipe.appliance)) {
-                    devices.push(recipe.appliance)
+                if (!devices.includes(recipe.appliance.toLowerCase())) {
+                    devices.push(recipe.appliance.toLowerCase())
                 }
         })
         return devices
@@ -26,8 +26,8 @@ class GetData {
         let cookingTools = []
         tools.forEach(recipe => {
             recipe.ustensils.forEach(ust => {
-                if (!cookingTools.includes(ust)) {
-                    cookingTools.push(ust)
+                if (!cookingTools.includes(ust.toLowerCase())) {
+                    cookingTools.push(ust.toLowerCase())
                 }
             })
         })

@@ -19,7 +19,7 @@ class DisplayTagsList {
             let ingredientLiTag = document.createElement("li")
 
             list.appendChild(ingredientLiTag)
-            ingredientLiTag.innerHTML = `${ingredient}`
+            ingredientLiTag.innerHTML = `${Normalize.changeToUpper(ingredient)}`
             ingredientLiTag.classList.add("ingredient-tag")
         })
     }
@@ -34,7 +34,7 @@ class DisplayTagsList {
             let devicesLiTag = document.createElement("li")
 
             list.appendChild(devicesLiTag)
-            devicesLiTag.innerHTML = `${device}`
+            devicesLiTag.innerHTML = `${Normalize.changeToUpper(device)}`
             devicesLiTag.classList.add("device-tag")
         })
     }
@@ -47,7 +47,7 @@ class DisplayTagsList {
         tools.forEach((tool) => {
             let toolLiTag = document.createElement("li")
 
-            toolLiTag.innerHTML = `${tool}`
+            toolLiTag.innerHTML = `${Normalize.changeToUpper(tool)}`
             list.appendChild(toolLiTag)
             toolLiTag.classList.add("tool-tag")
         })

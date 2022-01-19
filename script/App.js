@@ -9,7 +9,7 @@ async function researchAlgorithm() {
 
 
     searchInput.addEventListener("input", async (search) => {
-        let searchValue = search.target.value
+        let searchValue = Normalize.normalizationText(search.target.value)
         if(searchValue.length > 2) {
             let searchResult = Research.mainResearch(searchValue)
             
@@ -22,7 +22,6 @@ async function researchAlgorithm() {
                 new DisplayTagsList().displayToolsTagList(searchResult.toolsTags)
                 new DisplayTagsList().displayIngredientTagList(searchResult.ingredientsTags)
                 new DisplayTagsList().displayDevicesTagList(searchResult.devicesTags)
-                new DisplayRecipe().display(await new FilterRecipes().filterRecipesByTags(searchResult.recipesMatched))
                 await new DisplayRecipe().display(await new FilterRecipes().filterRecipesByTags(searchResult.recipesMatched))
                 return
             }
