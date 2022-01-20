@@ -9,6 +9,8 @@ class DisplayTagsList {
         new DisplayTagsList().displayDevicesTagList(new GetData().getDevices(array))
         new DisplayTagsList().displayToolsTagList(new GetData().getCookingTools(array))
     }
+
+    
     displayIngredientTagList(ingredients) {
         let list = document.createElement("ul")
         list.classList.add("taglist-ingredients")
