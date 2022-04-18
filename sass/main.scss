@@ -167,6 +167,7 @@ body {
             font-style: normal;
             width: 155px;
             height: 69px;
+            overflow: scroll;
             border-radius: 5px;
             display: flex;
             transition: ease-in-out 1s;
@@ -182,135 +183,102 @@ body {
                 margin-top: 20px;
                 padding-left: 15px;
                 transition-duration: 0.2s;
-            }
-            .input-container {
-                width: 80%;
-                height: 40px;
-                .input-field-Ingredients{
-                    height: 30px;
-                    width: 100%;
-                    margin-top: 15px;
-                    color: white;
+                .filter-input {
                     background-color: transparent;
                     border: none;
-                    outline: none;
-                    margin-left: 15px;
-                }
-                .input-field-Appareil{
-                    height: 30px;
-                    width: 100%;
-                    margin-top: 15px;
-                    color: white;
-                    background-color: transparent;
-                    border: none;
-                    outline: none;
-                    margin-left: 15px;
-                }
-                .input-field-Ustensiles {
-                    height: 30px;
-                    width: 100%;
-                    margin-top: 15px;
-                    color: white;
-                    background-color: transparent;
-                    border: none;
-                    outline: none;
-                    margin-left: 15px;
-                }
-                .input-field::placeholder {
                     color: white;
                     opacity: 0.5;
+                    font-size: 18px;
                 }
-                input[type="search"]::-webkit-search-cancel-button {
-                    display: none;
+                input::placeholder {
+                    color: white;
+                  }
+            }
+            
+        }
+        .filter-container.open {
+            width: 500px;
+            #ingredients-taglist-container {
+                padding: 1rem;
+                display: flex;
+                justify-content: start;
+                flex-wrap: wrap;
+                .tag-container {
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 0px;
+                    width: 101px;
+                    transition-duration: 0.2s;
+                    margin: 0.5rem;
+                    height: 50px;
+                    text-overflow: ellipsis;
+                    p {
+                        margin: 0 0 0 5px;
+                        text-align: start;
+                    }
+                }
+                .tag-container:hover {
+                    background-color: white;
+                    p {
+                        color: #3282F7;
+                    }
                 }
             }
-            .tags-wrapper {
-                width: 100%;
-                overflow: scroll;
-                #ingredient-taglist-container {
-                    .taglist-ingredients {
+            #appliance-taglist-container {
+                padding: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                .tag-container {
+                    border-radius: 5px;
                     display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    list-style: none;
-                    padding-left: 0;
-                    height: fit-content;
-                    margin: 1.5rem 1rem 1rem 1rem;
-                        li {
-                        font-size: 18px;
-                        overflow: hidden;
-                        padding: 0.5rem 1rem;
+                    align-items: center;
+                    padding: 0 0px;
+                    transition-duration: 0.2s;
+                    margin: 0.5rem;
+                    width: 100px;
+                    height: 50px;
+                    text-overflow: ellipsis;
+                    p {
+                        margin: 0 0 0 5px;
                         text-align: start;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        width: 9rem;
-                        cursor: pointer;
-                        transition-duration: 0.2s;
-                        border-radius: 5px;
-                        }
-                        li:hover {
-                            background-color: white;
-                            color: #3282F7;
-                        }
                     }
                 }
-                #devices-taglist-container {
-                    .taglist-devices {
-                    display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    list-style: none;
-                    padding-left: 0;
-                    height: fit-content;
-                    margin: 1.5rem 1rem 1rem 1rem;
-                        li {
-                        font-size: 18px;
-                        overflow: hidden;
-                        padding: 0.5rem 1rem;
-                        text-align: start;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        width: 9rem;
-                        cursor: pointer;
-                        transition-duration: 0.2s;
-                        border-radius: 5px;
-                        }
-                        li:hover {
-                            background-color: white;
-                            color: #3282F7;
-                        }
+                .tag-container:hover {
+                    background-color: white;
+                    p {
+                        color: #3282F7;
                     }
                 }
-                #tools-taglist-container {
-                    .taglist-tools {
+            }
+            #tools-taglist-container {
+                padding: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                .tag-container {
+                    border-radius: 5px;
                     display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    list-style: none;
-                    padding-left: 0;
-                    height: fit-content;
-                    margin: 1.5rem 1rem 1rem 1rem;
-                        li {
-                        font-size: 18px;
-                        overflow: hidden;
-                        padding: 0.5rem 1rem;
+                    align-items: center;
+                    padding: 0 0px;
+                    transition-duration: 0.2s;
+                    margin: 0.5rem;
+                    width: 100px;
+                    height: 50px;
+                    text-overflow: ellipsis;
+                    p {
+                        margin: 0 0 0 5px;
                         text-align: start;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        width: 10rem;
-                        cursor: pointer;
-                        transition-duration: 0.2s;
-                        border-radius: 5px;
-                        }
-                        li:hover {
-                            background-color: white;
-                            color: #3282F7;
-                        }
+                    }
+                }
+                .tag-container:hover {
+                    background-color: white;
+                    p {
+                        color: #3282F7;
                     }
                 }
             }
         }
-        .tags-wrapper::-webkit-scrollbar {
+        .filter-container::-webkit-scrollbar {
             display: none;
         }
         .blue.deployed {

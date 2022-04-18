@@ -1,5 +1,6 @@
 class GetData {
 
+
     getIngredients(ing) {
         let ingredients = []
         ing.forEach(recipe => {
@@ -34,3 +35,5 @@ class GetData {
         return cookingTools
     }
 }
+
+export default GetData

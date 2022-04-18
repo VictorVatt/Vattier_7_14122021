@@ -12,8 +12,6 @@ class RecipeCard {
 
 
     htmlCardCreator() {
-
-
         return `<div class="recipe-card">
                     <div class="grey-part"></div>
                     <div class="information-container">
