@@ -1,3 +1,5 @@
+import Normalize from "../Utils/normalize.js"
+
 let ingredientTagList = document.querySelector("#ingredients-taglist-container")
 let applianceTagList = document.querySelector("#appliance-taglist-container")
 let toolsTagList = document.querySelector("#tools-taglist-container")
@@ -20,7 +22,7 @@ function fillTags(tagsArray, HTMLelement) {
     tagsArray.forEach(tag => {
         let template  = document.createElement("div")
         template.classList.add("tag-container")
-        template.innerHTML = `<p class="tag">${tag}<p>`
+        template.innerHTML = `<p class="tag">${Normalize.changeToUpper(tag)}<p>`
         HTMLelement.appendChild(template)
     })
 }

@@ -19,3 +19,5 @@ class Normalize {
             .replace(/[\u0300-\u036f]/g, "")
     }
 }
+
+export default Normalize

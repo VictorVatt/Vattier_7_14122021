@@ -84,13 +84,14 @@ body {
             display: flex;
             align-items: center;
         }
-        .far {
+        i {
             margin-left: 20px;
             font-size: 18px;
+            color: white;
             transition-duration: 0.2s;
             cursor: pointer;
         }
-        .far:hover{
+        i:hover{
             color: rgb(202, 202, 202);
         }
     }
@@ -112,13 +113,14 @@ body {
             display: flex;
             align-items: center;
         }
-        .far {
+        i {
             margin-left: 20px;
             font-size: 18px;
+            color: white;
             transition-duration: 0.2s;
             cursor: pointer;
         }
-        .far:hover{
+        i:hover{
             color: rgb(202, 202, 202);
         }
     }
@@ -140,13 +142,14 @@ body {
             display: flex;
             align-items: center;
         }
-        .far {
+        i {
             margin-left: 20px;
             font-size: 18px;
+            color: white;
             transition-duration: 0.2s;
             cursor: pointer;
         }
-        .far:hover{
+        i:hover{
             color: rgb(202, 202, 202);
         }
     }
@@ -201,14 +204,15 @@ body {
             #ingredients-taglist-container {
                 padding: 1rem;
                 display: flex;
-                justify-content: start;
+                justify-content: center;
                 flex-wrap: wrap;
+                cursor: pointer;
                 .tag-container {
                     border-radius: 5px;
                     display: flex;
                     align-items: center;
                     padding: 0 0px;
-                    width: 101px;
+                    width: 200px;
                     transition-duration: 0.2s;
                     margin: 0.5rem;
                     height: 50px;
@@ -229,6 +233,8 @@ body {
                 padding: 1rem;
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: center;
+                cursor: pointer;
                 .tag-container {
                     border-radius: 5px;
                     display: flex;
@@ -236,7 +242,7 @@ body {
                     padding: 0 0px;
                     transition-duration: 0.2s;
                     margin: 0.5rem;
-                    width: 100px;
+                    width: 200px;
                     height: 50px;
                     text-overflow: ellipsis;
                     p {
@@ -255,6 +261,8 @@ body {
                 padding: 1rem;
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: center;
+                cursor: pointer;
                 .tag-container {
                     border-radius: 5px;
                     display: flex;
@@ -262,7 +270,7 @@ body {
                     padding: 0 0px;
                     transition-duration: 0.2s;
                     margin: 0.5rem;
-                    width: 100px;
+                    width: 200px;
                     height: 50px;
                     text-overflow: ellipsis;
                     p {
