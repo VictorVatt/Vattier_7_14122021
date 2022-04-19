@@ -35,11 +35,13 @@ function Algorithm() {
 
             let tags = getAllTags(recipesMatched)
             displayTags(tags)
+            addNewTag(recipesMatched)
             
             
 
         } else {
             displayTags(defaultTags)
+            addNewTag(allRecipesData)
             console.log("Aucun recette ne correspond à la recherche")
         }
     })
@@ -48,11 +50,14 @@ Algorithm()
 
 
 export function recipeCardCreator(recipes, HTMLelement) {
-    HTMLelement.innerHTML = ""
-    recipes.forEach(recipe => {
+    if (recipes.length !== 0) {
+        HTMLelement.innerHTML = ""
+        recipes.forEach(recipe => {
         let template = new RecipeCard(recipe).htmlCardCreator()
         HTMLelement.innerHTML += template
     })
+    return
+    }
 }
 
 function getAllTags(recipes) {
