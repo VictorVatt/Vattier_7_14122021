@@ -4,15 +4,18 @@ let ingredientTagList = document.querySelector("#ingredients-taglist-container")
 let applianceTagList = document.querySelector("#appliance-taglist-container")
 let toolsTagList = document.querySelector("#tools-taglist-container")
 
-function displayTags(tags) {
+function displayTags(tags, type, tagContent) {
     let ingredients = tags.ingredients
     let appliance = tags.appliance
     let tools = tags.tools
 
+    if (type === "singleArrayIngredients") {
+            fillTags(ingredients, ingredientTagList)
+    } else {
     fillTags(ingredients, ingredientTagList)
     fillTags(appliance, applianceTagList)
     fillTags(tools, toolsTagList)
-
+    }
 }
 
 export default displayTags

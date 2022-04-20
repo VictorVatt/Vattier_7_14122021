@@ -18,31 +18,28 @@ let tags = {
 function Algorithm() {
     // default setup
     let defaultTags = getAllTags(allRecipesData)
-    displayTags(defaultTags)
+    displayTags(defaultTags, '')
 
     addNewTag(allRecipesData)
     dropdownEventManager()
 
     mainSearchInput.addEventListener("keyup", (e) => {
         let inputValue = e.target.value.toLowerCase()
+        
         if (inputValue.length > 2) {
-            
             recipeCardSection.innerHTML = ""
-            // recover recipes wich match with inputValue
+            console.log("recherche")
             const recipesMatched = mainSearch(inputValue, allRecipesData)
-            // create cards with the matched recipes
-            recipeCardCreator(recipesMatched, recipeCardSection)
 
             let tags = getAllTags(recipesMatched)
             displayTags(tags)
             addNewTag(recipesMatched)
-            
-            
+          
 
         } else {
+            console.log("pas")
             displayTags(defaultTags)
             addNewTag(allRecipesData)
-            console.log("Aucun recette ne correspond à la recherche")
         }
     })
 }

@@ -1,5 +1,7 @@
 import Normalize from "../Utils/normalize.js"
 import { recipeCardCreator } from "../App.js"
+import displayTags from '../Utils/displayTags.js'
+import GetData from '../Utils/getAllData.js'
 
 let recipeCardSection = document.querySelector("#recipe-card-wrapper")
 
@@ -21,23 +23,30 @@ function createAnRemoveSelectedTagHTML(recipes) {
     }
 
     tagContainer.forEach((tag) => tag.addEventListener("click", (e) => {
+        console.log("salut")
         let tagContent = Normalize.changeToUpper(e.target.innerText)
-        
-        if (e.target.parentNode.id === "ingredients-taglist-container") {
 
+        if (e.target.parentNode.id === "ingredients-taglist-container") {
+    
             let template = `<span class="blue-selected-tag" ><p>${tagContent}</p><i class="fa-regular fa-circle-xmark"></i></span>` // html template 
             selectedTagSection.innerHTML += template // create the html of the tag
 
             selectedTags.ingredients.push(tagContent) // push the tag string in an array
-
+            
             let goodsTags = removeTag(selectedTags, e.target, recipes)
-            console.log(goodsTags)
+
             let ingredientFilter = filterRecipeByTags(goodsTags, recipes) // filter wished recipes with the tags
+
+            if (ingredientFilter.length === 0) { recipeCardSection.innerHTML = ''}
 
             recipeCardCreator(ingredientFilter, recipeCardSection) // create cards
 
+            let tagList = {
+                ingredients: new GetData().getIngredients(ingredientFilter)
 
-
+            }
+            displayTags(tagList, "singleArrayIngredients", tagContent)
+            
             e.target.style.display = "none"
 
         } else if (e.target.parentNode.id === "appliance-taglist-container") {
@@ -47,7 +56,6 @@ function createAnRemoveSelectedTagHTML(recipes) {
             let template = `<span class="green-selected-tag" ><p>${Normalize.changeToUpper(tagContent)}</p><i class="fa-regular fa-circle-xmark"></i></span>`
             selectedTagSection.innerHTML += template
             selectedTags.appliance.push(tagContent)
-            
             let applianceFilter = filterRecipeByTags(selectedTags, recipes)
             
             recipeCardCreator(applianceFilter, recipeCardSection)
@@ -69,9 +77,6 @@ function createAnRemoveSelectedTagHTML(recipes) {
 
         }
         // function remove tag : remove in the array and also the DOM element SPAN
-
-
-
     }))
     // return the default behavior (display all recipes)
     let noTagsSelected = filterRecipeByTags(selectedTags, recipes)
@@ -89,16 +94,16 @@ function filterRecipeByTags(selectedTags, recipes) {
     if (ingredientsTags.length > 0 || appliancesTags.length > 0 || toolsTags.length > 0  ) {
 
         recipes.forEach(recipe => {
-            if (recipe.ingredients.some(elt => elt.ingredient.includes(ingredientsTags))) {
+            if (ingredientsTags.every(element => recipe.ingredients.some(elt => elt.ingredient.includes(element)))) {
                 matchedRecipes.push(recipe)
+                
                 
             }
         })
-        console.log(matchedRecipes.length + " recette(s) trouvé")
+        console.log(matchedRecipes.length + " recettes correspondent")
         return matchedRecipes
     }
 
-    console.log("Pas de tags selectionnés")
     return recipes
 }
 
@@ -106,18 +111,28 @@ function filterRecipeByTags(selectedTags, recipes) {
 
 function removeTag(selectedTags, eventTarget, recipes) {
     let cross = document.querySelectorAll(".fa-circle-xmark")
-
         cross.forEach((cross) => cross.addEventListener("click", (e) => {
             if (e.target.parentNode.className === "blue-selected-tag") {
+
+                // array logic
                 let ingredients = selectedTags.ingredients // recover the selected tags
                 let removedTag = e.target.parentNode.innerText // revover the content of the tag we wan't to delete
                 let indexRemoved = ingredients.indexOf(removedTag) // find the index od deltedTag in the ingredient seleted array
                 ingredients.splice(indexRemoved, 1) // remove the tag with the good index
 
                 e.target.parentNode.remove() // remove the tag from the DOM
-                eventTarget.style.display = "flex"
+                eventTarget.style.display = "flex" // display the tag in the list
+
                 let ingredientFilter = filterRecipeByTags(selectedTags, recipes)
+                console.log(ingredientFilter)
                 recipeCardCreator(ingredientFilter, recipeCardSection)
+
+                let tagList = {
+                    ingredients: new GetData().getIngredients(ingredientFilter)
+                }
+                displayTags(tagList, "singleArrayIngredients")
+                addNewTag(recipes)
+
 
                 return selectedTags
             }
@@ -129,7 +144,7 @@ function removeTag(selectedTags, eventTarget, recipes) {
             if (e.target.parentNode.className === "red-selected-tag") {
                 e.target.parentNode.remove()
             }
+            addNewTag(recipes)
             }))
-
     return selectedTags
 }
