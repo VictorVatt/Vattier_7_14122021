@@ -1,5 +1,5 @@
 
-import  ingredientTagFilter  from "../Research/tagInputFilter.js";
+import  {ingredientTagFilter, applianceTagFilter, toolsTagFilter}  from "../Research/tagInputFilter.js";
 
 let allDropdownArrow = document.querySelectorAll(".fas.fa-chevron-down")
 let allFilters = document.querySelectorAll(".filter-container")
@@ -20,6 +20,8 @@ export function dropdownEventManager() {
             allFilters[index].style.height = "69px"
         } else {
             ingredientTagFilter()
+            applianceTagFilter()
+            toolsTagFilter()
             allFilters[index].classList.add("open")
             allFiltersTitles[index].innerHTML = '<input type="text" class="filter-input" placeholder="Rechercher ..."/>'
             allTagsWrapper[index].style.display = "block"
