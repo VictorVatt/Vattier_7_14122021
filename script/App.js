@@ -28,7 +28,6 @@ function Algorithm() {
         
         if (inputValue.length > 2) {
             recipeCardSection.innerHTML = ""
-            console.log("recherche")
             const recipesMatched = mainSearch(inputValue, allRecipesData)
 
             let tags = getAllTags(recipesMatched)
@@ -37,7 +36,6 @@ function Algorithm() {
           
 
         } else {
-            console.log("pas")
             displayTags(defaultTags)
             addNewTag(allRecipesData)
         }
@@ -65,4 +63,6 @@ function getAllTags(recipes) {
     }
     return tags
 }
+
+
 

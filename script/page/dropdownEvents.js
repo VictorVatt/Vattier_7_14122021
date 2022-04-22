@@ -1,3 +1,6 @@
+
+import  ingredientTagFilter  from "../Research/tagInputFilter.js";
+
 let allDropdownArrow = document.querySelectorAll(".fas.fa-chevron-down")
 let allFilters = document.querySelectorAll(".filter-container")
 let allFiltersTitles = document.querySelectorAll(".container-title")
@@ -16,7 +19,7 @@ export function dropdownEventManager() {
             allTagsWrapper[index].style.display = "none"
             allFilters[index].style.height = "69px"
         } else {
-            
+            ingredientTagFilter()
             allFilters[index].classList.add("open")
             allFiltersTitles[index].innerHTML = '<input type="text" class="filter-input" placeholder="Rechercher ..."/>'
             allTagsWrapper[index].style.display = "block"
@@ -26,3 +29,4 @@ export function dropdownEventManager() {
 
     }))
 }
+
