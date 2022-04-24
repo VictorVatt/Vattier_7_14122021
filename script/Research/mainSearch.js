@@ -2,11 +2,11 @@
 export function mainSearch(inputValue, recipes) {
     let recipesMatched = []
 
-    recipes.forEach(recipe => {
-        if (recipe.name.includes(inputValue) || recipe.description.includes(inputValue) || recipe.ingredients.some(elt => elt.ingredient.includes(inputValue))) {
-            recipesMatched.push(recipe);
+    for (let i = 0; i < recipes.length; i++) {
+        if (recipes[i].name.includes(inputValue) || recipes[i].description.includes(inputValue) || recipes[i].ingredients.some(elt => elt.ingredient.includes(inputValue))) {
+            recipesMatched.push(recipes[i]);
         }
-    })
+    }
 
     return recipesMatched
 }

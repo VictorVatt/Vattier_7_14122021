@@ -1,4 +1,3 @@
-
 import  {ingredientTagFilter, applianceTagFilter, toolsTagFilter}  from "../Research/tagInputFilter.js";
 
 let allDropdownArrow = document.querySelectorAll(".fas.fa-chevron-down")
