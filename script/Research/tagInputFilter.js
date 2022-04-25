@@ -8,7 +8,7 @@ export function ingredientTagFilter() {
             let inputValue = e.target.value
 
             allIngredientsTags.forEach(element => {
-                if (element.innerText.includes(e.target.value)) {
+                if (element.innerText.includes(inputValue)) {
                     element.style.display = "flex"
                 } else {
                     element.style.display = "none"
@@ -28,7 +28,7 @@ export function applianceTagFilter() {
             let inputValue = e.target.value
 
             allApplianceTags.forEach(element => {
-                if (element.innerText.includes(e.target.value)) {
+                if (element.innerText.includes(inputValue)) {
                     element.style.display = "flex"
                 } else {
                     element.style.display = "none"
@@ -47,7 +47,7 @@ export function toolsTagFilter() {
             let inputValue = e.target.value
 
             allToolsTags.forEach(element => {
-                if (element.innerText.includes(e.target.value)) {
+                if (element.innerText.includes(inputValue)) {
                     element.style.display = "flex"
                 } else {
                     element.style.display = "none"
